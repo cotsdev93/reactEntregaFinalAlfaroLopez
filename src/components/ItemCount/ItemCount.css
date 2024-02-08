@@ -1,0 +1,28 @@
+.counter {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+  align-items: center;
+}
+
+.botonNumero {
+  background-color: #d4eeff;
+  border-radius: 50%;
+  border: none;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.agregar {
+  background-color: #d4eeff;
+  border: none;
+  padding: 4px;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.count {
+  margin: 0;
+}

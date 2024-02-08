@@ -1,0 +1,14 @@
+article {
+ justify-content: center;
+ margin: auto
+}
+
+.container {
+    width: 202px;
+    margin: auto;
+}
+
+.cat {
+    display: flex;
+    justify-content: space-between;
+}

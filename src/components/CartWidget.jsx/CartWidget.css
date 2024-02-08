@@ -1,0 +1,39 @@
+.cartContainer {
+  width: 50px;
+  height: 50px;
+  background-color: #85C1E9;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 0.5px #00000020;
+}
+
+.cart {
+  color:#FEF5E7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-60%, -40%);
+  font-size: 25px;
+}
+
+.cartCounter {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #FEF5E7;
+  border-radius: 50%;
+  top: -3px;
+  right: -3px;
+}
+
+.cartNumber {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cartNumber {
+    color:#2874A6
+}

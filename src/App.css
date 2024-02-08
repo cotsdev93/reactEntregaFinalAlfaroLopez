@@ -1,0 +1,19 @@
+* {
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  
+}
+body {
+  background-color: #fef5e7;
+}
+@font-face {
+  font-family: "britania";
+  src: url("/src/assets/fonts/Britania_Ligatura.otf");
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
