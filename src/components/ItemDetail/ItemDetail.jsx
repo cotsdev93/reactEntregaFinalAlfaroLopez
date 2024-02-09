@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
-import {useCart} from "../../context/CartContext"
+import { useCart } from "../../context/CartContext";
+import { Link } from "react-router-dom";
+
 
 const ItemDetail = ({
   id,
@@ -12,21 +14,34 @@ const ItemDetail = ({
   description,
   stock,
 }) => {
-  const [quantity,setQuantity] = useState(0)
-  const {addItem} =useCart()
+  const [showCartButton, setShowCartButton] = useState(true);
+  const [quantity, setQuantity] = useState(0);
+  const [cartSummary, setCartSummary] = useState([]);
+  const { addItem } = useCart();
+
   const handleOnAdd = (quantity) => {
-    const objProducToAdd = {
+    const objProductToAdd = {
       id,
       name,
       quantity,
       price,
     };
 
-    addItem(objProducToAdd)
+    addItem(objProductToAdd);
     setQuantity(quantity);
 
+    
+    const newCartItem = { ...objProductToAdd };
+    setCartSummary([...cartSummary, newCartItem]);
+
+ 
+    setShowCartButton(false);
   };
 
+  const handleFinishPurchase = () => {
+
+    console.log("terminado!");
+  };
 
   return (
     <article>
@@ -41,11 +56,30 @@ const ItemDetail = ({
         </div>
         <p>Descripción:</p>
         <p>{description}</p>
-        <ItemCount stock={stock} onAdd={handleOnAdd} />
+        {showCartButton ? (
+          <ItemCount stock={stock} onAdd={handleOnAdd} />
+        ) : (
+          <div>
+            {cartSummary.length > 0 && (
+              <div>
+                <h3>Resumen del Carrito:</h3>
+                <ul>
+                  {cartSummary.map((item, index) => (
+                    <li key={index}>
+                      {item.name} - Cantidad: {item.quantity}
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/cart">
+                  <button>Terminar Compra</button>
+                </Link>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </article>
   );
 };
 
 export default ItemDetail;
-

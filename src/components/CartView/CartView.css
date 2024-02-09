@@ -1,0 +1,20 @@
+section {
+    
+    background-color: rgb(182, 248, 245);
+}
+
+.cartItem{
+    display: flex;
+    padding:20px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+h3 {
+    padding: 10px
+}
+
+h2 {
+    padding-left: 50px;
+    
+}
